@@ -47,7 +47,7 @@
             {!! csrf_field() !!}
 
             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
-                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
+                <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Usernames">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
 
                 @if ($errors->has('name'))
@@ -86,6 +86,39 @@
                 @if ($errors->has('password_confirmation'))
                     <span class="help-block">
                         <strong>{{ $errors->first('password_confirmation') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('firstname') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" placeholder="Firstname">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('firstname'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('firstname') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('lastname') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" placeholder="Lastname">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('lastname'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('lastname') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group has-feedback{{ $errors->has('document') ? ' has-error' : '' }}">
+                <input type="text" class="form-control" name="document" value="{{ old('document') }}" placeholder="Document">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+
+                @if ($errors->has('document'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('document') }}</strong>
                     </span>
                 @endif
             </div>

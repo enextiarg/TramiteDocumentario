@@ -1,27 +1,77 @@
-# Laravel PHP Framework
+# Sistema de Trámite Documentario
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+El sistema permite llevar el control y poder ver el estado en el que se encuentra un trámite dentro de un municipio.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Est sistema está hecho con:
+  - Laravel 5.3
+  - MySQL
+  - Bootstrap
+  - jQuery
+  - Redis
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Requesitos
 
-## Official Documentation
+Para realizar pruebas del sistema es necesario tener instalado
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+* PHP >= 5.4
+* MySQL Server o MaríaDB
+* Apache Server
+* Composer
+* Redis
 
-## Contributing
+### Instalación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Clonar el repositorio en algún directorio:
+```sh
+$ git clone https://github.com/JKodev/TramiteDocumentario.git
+```
+Instalar las dependencias utilizando Composer.
 
-## Security Vulnerabilities
+```sh
+$ cd TramiteDocumentario
+$ composer install
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Luego se necesitará configurar el archivo `config/database.php`. Pero primero deberá configurar los datos de acceso a la base de datos en MySQL así como crear la base de datos.
 
-## License
+```php
+'mysql' => [
+    'driver' => 'mysql',
+    'host' => env('DB_HOST', 'localhost'), // IP del servidor
+    'port' => env('DB_PORT', '3306'), // Puerto
+    'database' => env('DB_DATABASE', 'forge'), // nombre de la base de datos
+    'username' => env('DB_USERNAME', 'forge'), // usuario de la base de datos
+    'password' => env('DB_PASSWORD', ''), // contraseña de la base de datos
+    'charset' => 'utf8',
+    'collation' => 'utf8_unicode_ci',
+    'prefix' => '',
+    'strict' => true,
+    'engine' => null,
+],
+```
+Ahora tendrá que ejecutar el comando:
+```sh
+$ php artisan migrate:install
+```
+Si todo sale bien, entonces ejecuta el comando:
+```sh
+$ php artisan migrate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+### Entorno de Prueba
+Si desea ejecutar la aplicación en un entorno de prueba, puede realizarlo sin la necesidad de instalar Apache, sólo utilizando PHP y ejecutando el comando:
+```sh
+$ php artisan serve
+```
+Si todo sale bien, usted podrá ingresar a la aplicación por medio de la url `http://localhost:8000/`.
+
+Si desea detener el servidor, deberá presionar la combinación de teclas `Ctrl + C` en la consola donde se encuentra ejecutando el servidor.
+
+### Entorno de Producción
+Deberá contactar al Desarrollador para poder pasar la aplicación a producción.
+
+Licencia
+----
+
+MIT
+

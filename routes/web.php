@@ -19,3 +19,25 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::resource('roles', 'RoleController');
+
+Route::resource('permissions', 'PermissionController');
+
+Route::resource('statuses', 'StatusController');
+
+Route::resource('documentTypes', 'DocumentTypeController');
+
+Route::resource('procedures', 'ProcedureController');
+
+Route::resource('reportTypes', 'ReportTypeController');
+
+Route::resource('customers', 'CustomerController');
+
+Route::resource('files', 'FileController');
+
+Route::resource('archives', 'ArchiveController');
+
+Route::resource('reports', 'ReportController');
+
+Route::resource('administrativeAreas', 'AdministrativeAreaController');

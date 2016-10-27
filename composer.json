@@ -17,7 +17,9 @@
     "jlapp/swaggervel": "dev-master",
     "doctrine/dbal": "~2.3",
     "barryvdh/laravel-ide-helper": "v2.2.1",
-    "barryvdh/laravel-debugbar": "v2.3.0"
+    "barryvdh/laravel-debugbar": "v2.3.0",
+    "zizaco/entrust": "5.2.x-dev",
+    "predis/predis": "dev-master"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

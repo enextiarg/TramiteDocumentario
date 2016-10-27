@@ -5,3 +5,6 @@
 Homestead.json
 Homestead.yaml
 .env
+.env.example
+database/structure/
+tests/traits/
