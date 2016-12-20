@@ -29,8 +29,7 @@ Route::group([
         'uses' => 'HomeController@index'
     ));
     Route::group([
-        'prefix' => 'user',
-        'middleware' => ['role:user|admin']
+        'prefix' => 'user'
     ], function () {
 
         Route::resource('files', 'UserFileController', array(
