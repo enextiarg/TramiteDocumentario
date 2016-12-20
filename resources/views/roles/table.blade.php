@@ -1,9 +1,9 @@
 <table class="table table-responsive" id="roles-table">
     <thead>
-        <th>Name</th>
-        <th>Display Name</th>
-        <th>Description</th>
-        <th colspan="3">Action</th>
+        <th>Nombre</th>
+        <th>Nombre a Mostrar</th>
+        <th>Descripción</th>
+        <th colspan="3">Acción</th>
     </thead>
     <tbody>
     @foreach($roles as $role)

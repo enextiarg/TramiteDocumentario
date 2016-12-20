@@ -1,8 +1,8 @@
 <table class="table table-responsive" id="archives-table">
     <thead>
-        <th>Name</th>
-        <th>File Id</th>
-        <th colspan="3">Action</th>
+        <th>Nombre</th>
+        <th>Expediente</th>
+        <th colspan="3">Acción</th>
     </thead>
     <tbody>
     @foreach($archives as $archive)

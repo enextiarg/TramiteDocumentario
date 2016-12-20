@@ -1,7 +1,7 @@
 <table class="table table-responsive" id="administrativeAreas-table">
     <thead>
-        <th>Name</th>
-        <th colspan="3">Action</th>
+        <th>Nombre</th>
+        <th colspan="3">Acción</th>
     </thead>
     <tbody>
     @foreach($administrativeAreas as $administrativeArea)

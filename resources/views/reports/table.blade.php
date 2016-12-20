@@ -1,10 +1,10 @@
 <table class="table table-responsive" id="reports-table">
     <thead>
-        <th>Report Type Id</th>
-        <th>Report Date</th>
-        <th>User Id</th>
-        <th>File Id</th>
-        <th colspan="3">Action</th>
+        <th>Tipo de Reporte</th>
+        <th>Fecha de Reporte</th>
+        <th>Usuario</th>
+        <th>Expediente</th>
+        <th colspan="3">Acción</th>
     </thead>
     <tbody>
     @foreach($reports as $report)

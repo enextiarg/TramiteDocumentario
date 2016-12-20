@@ -12,32 +12,57 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('app.home');
 });
 
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+# Route::get('app/home', 'HomeController@index');
 
-Route::resource('roles', 'RoleController');
+Route::group([
+    'prefix' => 'app',
+    'middleware' => ['auth']
+], function () {
+    Route::get('/', array(
+        'as' => 'app.home',
+        'uses' => 'HomeController@index'
+    ));
+    Route::group([
+        'prefix' => 'user',
+        'middleware' => ['role:user|admin']
+    ], function () {
 
-Route::resource('permissions', 'PermissionController');
+        Route::resource('files', 'UserFileController', array(
+            'as' => 'customer'
+        ));
+    });
 
-Route::resource('statuses', 'StatusController');
+    Route::group([
+        'prefix' => 'settings',
+        'middleware' => ['role:admin']
+    ], function () {
+        Route::resource('roles', 'RoleController');
 
-Route::resource('documentTypes', 'DocumentTypeController');
+        Route::resource('permissions', 'PermissionController');
 
-Route::resource('procedures', 'ProcedureController');
+        Route::resource('statuses', 'StatusController');
 
-Route::resource('reportTypes', 'ReportTypeController');
+        Route::resource('documentTypes', 'DocumentTypeController');
 
-Route::resource('customers', 'CustomerController');
+        Route::resource('procedures', 'ProcedureController');
 
-Route::resource('files', 'FileController');
+        Route::resource('reportTypes', 'ReportTypeController');
 
-Route::resource('archives', 'ArchiveController');
+        Route::resource('customers', 'CustomerController');
 
-Route::resource('reports', 'ReportController');
+        Route::resource('files', 'FileController');
 
-Route::resource('administrativeAreas', 'AdministrativeAreaController');
+        Route::resource('archives', 'ArchiveController');
+
+        Route::resource('reports', 'ReportController');
+
+        Route::resource('administrativeAreas', 'AdministrativeAreaController');
+    });
+
+});

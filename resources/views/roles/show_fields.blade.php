@@ -1,36 +1,17 @@
-<!-- Id Field -->
-<div class="form-group">
-    {!! Form::label('id', 'Id:') !!}
-    <p>{!! $role->id !!}</p>
-</div>
-
 <!-- Name Field -->
 <div class="form-group">
-    {!! Form::label('name', 'Name:') !!}
+    {!! Form::label('name', 'Nombre:') !!}
     <p>{!! $role->name !!}</p>
 </div>
 
 <!-- Display Name Field -->
 <div class="form-group">
-    {!! Form::label('display_name', 'Display Name:') !!}
+    {!! Form::label('display_name', 'Nombre a Mostrar:') !!}
     <p>{!! $role->display_name !!}</p>
 </div>
 
 <!-- Description Field -->
 <div class="form-group">
-    {!! Form::label('description', 'Description:') !!}
+    {!! Form::label('description', 'Descripción:') !!}
     <p>{!! $role->description !!}</p>
 </div>
-
-<!-- Created At Field -->
-<div class="form-group">
-    {!! Form::label('created_at', 'Created At:') !!}
-    <p>{!! $role->created_at !!}</p>
-</div>
-
-<!-- Updated At Field -->
-<div class="form-group">
-    {!! Form::label('updated_at', 'Updated At:') !!}
-    <p>{!! $role->updated_at !!}</p>
-</div>
-

@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Document Type
+            Tipo de Documento
         </h1>
     </section>
     <div class="content">

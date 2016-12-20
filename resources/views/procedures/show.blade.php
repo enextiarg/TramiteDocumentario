@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Procedure
+            Procedimiento
         </h1>
     </section>
     <div class="content">
@@ -11,7 +11,7 @@
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
                     @include('procedures.show_fields')
-                    <a href="{!! route('procedures.index') !!}" class="btn btn-default">Back</a>
+                    <a href="{!! route('procedures.index') !!}" class="btn btn-default">Regresar</a>
                 </div>
             </div>
         </div>

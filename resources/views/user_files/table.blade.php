@@ -14,15 +14,15 @@
     <tbody>
     @foreach($files as $file)
         <tr>
-            <td>{!! $file->procedure->name !!}</td>
+            <td>{!! $file->procedure_id !!}</td>
             <td>{!! $file->file_number !!}</td>
             <td>{!! $file->document_number !!}</td>
             <td>{!! $file->subject !!}</td>
             <td>{!! $file->received_date !!}</td>
             <td>{!! $file->folio !!}</td>
-            <td>{!! $file->customer->firstname !!} {!! $file->customer->lastname !!}</td>
-            <td>{!! ($file->file_status)?'Activo':'Terminado' !!}</td>
-            <td>{!! $file->documentType->name !!}</td>
+            <td>{!! $file->customer_id !!}</td>
+            <td>{!! $file->file_status !!}</td>
+            <td>{!! $file->document_type_id !!}</td>
             <td>
                 {!! Form::open(['route' => ['files.destroy', $file->id], 'method' => 'delete']) !!}
                 <div class='btn-group'>

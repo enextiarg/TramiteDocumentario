@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Customer;
+use App\Models\Role;
 use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -27,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/app';
 
     /**
      * Create a new controller instance.
@@ -65,7 +67,16 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        Customer::create([
+            'firstname' => $data['firstname'],
+            'lastname' => $data['lastname'],
+            'document' => $data['document'],
+        ]);
+
+        $customer_role = Role::where('name', 'customer')->first();
+
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
@@ -73,5 +84,9 @@ class RegisterController extends Controller
             'lastname' => $data['lastname'],
             'document' => $data['document'],
         ]);
+
+        $user->attachRole($user);
+
+        return $user;
     }
 }

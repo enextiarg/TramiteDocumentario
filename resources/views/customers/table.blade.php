@@ -1,9 +1,9 @@
 <table class="table table-responsive" id="customers-table">
     <thead>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Document</th>
-        <th colspan="3">Action</th>
+        <th>Nombres</th>
+        <th>Apellidos</th>
+        <th>DNI</th>
+        <th colspan="3">Acción</th>
     </thead>
     <tbody>
     @foreach($customers as $customer)
