@@ -57,6 +57,10 @@ Si todo sale bien, entonces ejecuta el comando:
 ```sh
 $ php artisan migrate
 ```
+Luego debería insertar datos iniciales, entonces ejecuta el comando:
+```sh
+$ php artisan db:seed
+```
 
 ### Entorno de Prueba
 Si desea ejecutar la aplicación en un entorno de prueba, puede realizarlo sin la necesidad de instalar Apache, sólo utilizando PHP y ejecutando el comando:
